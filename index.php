@@ -16,6 +16,8 @@ CONCAT(user.nombre,' ',user.apellido) medico_cita, cita.fecha, cita.horario, cit
 
 $result_citas = $mysqli-> query($sql_citas);
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -67,6 +69,7 @@ $result_citas = $mysqli-> query($sql_citas);
                     <td><input style="font-size: 20px;" type="text" required name="peso"></td>
                     <td><input style="font-size: 20px;" type="text" required name="talla"></td>
                     <td class="center-align"><button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                    <input type="hidden" name="id_cita" value="<?php echo $citas['id_cita'];?>">
                     <i class="material-icons right">send</i>
                     </button></td>
                     </form>
