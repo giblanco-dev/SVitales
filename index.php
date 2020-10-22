@@ -40,9 +40,16 @@ $result_citas = $mysqli-> query($sql_citas);
         </div>
     </div>
         <div class="row" style="margin-top: 1%;">
+        <div class="col s8 grey lighten-3 center-align">
+        
+        <h4><b>Captura de Signos Vitales</b></h4>
+        </div>
+        <div class="col s4 grey lighten-3 center-align">
+        <a href="http://localhost/svitales/"><h4>Actualizar <i class="small material-icons">autorenew</i></h4></a>
+        </div>
+        </div>
+        <div class="row">
         <div class="col s12 grey lighten-3 center-align">
-        <div class="divider"></div>
-        <h4>Captura de Signos Vitales</h4>
         <table>
             <thead>
                 <tr>
