@@ -16,8 +16,6 @@ CONCAT(user.nombre,' ',user.apellido) medico_cita, cita.fecha, cita.horario, cit
 
 $result_citas = $mysqli-> query($sql_citas);
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,13 +23,13 @@ $result_citas = $mysqli-> query($sql_citas);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signos Vitales</title>
-    <link rel="shortcut icon" href="../ser/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../ser/css/materialize.css">
-    <link rel="stylesheet" href="../ser/icons/iconfont/material-icons.css">
-    <script src="../ser/js/materialize.js"></script>
-    <script type="text/javascript" src="../ser/js/jquery-3.3.1.min.js"></script>
+    <link rel="shortcut icon" href="../ser/static/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../ser/static/css/materialize.css">
+    <link rel="stylesheet" href="../ser/static/icons/iconfont/material-icons.css">
+    <script src="../ser/static/js/materialize.js"></script>
+    <script type="text/javascript" src="../ser/static/js/jquery-3.3.1.min.js"></script>
 </head>
-<body style="background-image: url('../ser/img/background_login.png'); background-size: cover;">
+<body style="background-image: url('../ser/static/img/background_login.png'); background-size: cover;">
     <div class="container">
         <div class="row" style="margin-top: 1%;">
         <div class="col s12 center-align">
