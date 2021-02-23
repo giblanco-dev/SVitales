@@ -33,7 +33,7 @@ $result_citas = $mysqli-> query($sql_citas);
     <div class="container">
         <div class="row" style="margin-top: 1%;">
         <div class="col s12 center-align">
-        <img src="../ser/img/banner_2.png" class="responsive-img z-depth-5">
+        <img src="../ser/static/img/banner_2.png" class="responsive-img z-depth-5">
         </div>
         </div>
     </div>
@@ -46,7 +46,7 @@ $result_citas = $mysqli-> query($sql_citas);
         <a href="http://localhost/svitales/"><h4>Actualizar <i class="small material-icons">autorenew</i></h4></a>
         </div>
         </div>
-        <div class="row">
+        <div>
         <div class="col s12 grey lighten-3 center-align">
         <table>
             <thead>
@@ -61,13 +61,23 @@ $result_citas = $mysqli-> query($sql_citas);
                     <th></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="center-align">
                 <?php
                 while($citas = mysqli_fetch_assoc($result_citas)){ ?>
                 <tr>
                     <td style="text-transform: capitalize;"><h6><?php echo $citas['Nom_paciente']; ?></h6></td>
                     <form action="update_svitales.php" method="POST">
-                    <td><input style="font-size: 20px;" type="text" required name="ta"></td>
+                    <td>
+                    <div class="row">
+                    <div class="col s5">
+                    <input style="font-size: 20px; width: 50px;" type="text" required name="ta1">
+                    </div>
+                    <div class="col s2"><p>/</p></div>
+                    <div class="col s5">
+                    <input style="font-size: 20px; width: 50px;" type="text" required name="ta2">
+                    </div>
+                    </div>
+                    </td>
                     <td><input style="font-size: 20px;" type="text" required name="temp"></td>
                     <td><input style="font-size: 20px;" type="text" required name="fc"></td>
                     <td><input style="font-size: 20px;" type="text" required name="fr"></td>

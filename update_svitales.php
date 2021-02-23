@@ -16,7 +16,7 @@ require_once 'conn.php';
 
 if(!empty($_POST)){
     $id_cita = $_POST['id_cita'];
-    $t_a = $_POST['ta'];
+    $t_a = $_POST['ta1'].'/'.$_POST['ta2'];
     $temp = $_POST['temp'];
     $f_c = $_POST['fc'];
     $f_r = $_POST['fr'];
