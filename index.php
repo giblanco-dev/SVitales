@@ -58,6 +58,8 @@ $result_citas = $mysqli-> query($sql_citas);
                     <th>FRE R</th>
                     <th>Peso</th>
                     <th>Talla</th>
+                    <th>Edad</th>
+                    <th>Alergias</th>
                     <th></th>
                 </tr>
             </thead>
@@ -65,24 +67,26 @@ $result_citas = $mysqli-> query($sql_citas);
                 <?php
                 while($citas = mysqli_fetch_assoc($result_citas)){ ?>
                 <tr>
-                    <td style="text-transform: capitalize;"><h6><?php echo $citas['Nom_paciente']; ?></h6></td>
+                    <td style="text-transform: capitalize;"><b><?php echo $citas['Nom_paciente']; ?></b></td>
                     <form action="update_svitales.php" method="POST">
                     <td>
                     <div class="row">
                     <div class="col s5">
-                    <input style="font-size: 20px; width: 50px;" type="text" required name="ta1">
+                    <input style="font-size: 14px; width: 50px;" type="number" required name="ta1" min="1">
                     </div>
                     <div class="col s2"><p>/</p></div>
                     <div class="col s5">
-                    <input style="font-size: 20px; width: 50px;" type="text" required name="ta2">
+                    <input style="font-size: 14px; width: 50px;" type="number" required name="ta2" min="1">
                     </div>
                     </div>
                     </td>
-                    <td><input style="font-size: 20px;" type="text" required name="temp"></td>
-                    <td><input style="font-size: 20px;" type="text" required name="fc"></td>
-                    <td><input style="font-size: 20px;" type="text" required name="fr"></td>
-                    <td><input style="font-size: 20px;" type="text" required name="peso"></td>
-                    <td><input style="font-size: 20px;" type="text" required name="talla"></td>
+                    <td><input style="font-size: 14px; width: 50px;" type="number" step="0.1" required name="temp" min="1"></td>
+                    <td><input style="font-size: 14px; width: 50px;" type="number" step="0.1" required name="fc" min="1"></td>
+                    <td><input style="font-size: 14px; width: 50px;" type="number" step="0.1" required name="fr" min="1"></td>
+                    <td><input style="font-size: 14px; width: 50px;" type="number" step="0.1" required name="peso" min="1"></td>
+                    <td><input style="font-size: 14px; width: 50px;" type="number" step="0.01" required name="talla" min="1"></td>
+                    <td><input style="font-size: 14px; width: 50px;" type="number" required name="edad" min="1"></td>
+                    <td><input style="font-size: 14px;" type="text" required name="alergias"></td>
                     <td class="center-align"><button class="btn waves-effect waves-light" type="submit" name="action">Enviar
                     <input type="hidden" name="id_cita" value="<?php echo $citas['id_cita'];?>">
                     <i class="material-icons right">send</i>
@@ -97,7 +101,7 @@ $result_citas = $mysqli-> query($sql_citas);
         <form action="app/logic/session.php" class="col s12"  method="POST">
         </form>
         
-        <p style="margin-bottom: 18px;" >© Copyright 2020</p>
+        <p style="margin-bottom: 18px;" >© Copyright 2022</p>
     </div>
         </div>
    
