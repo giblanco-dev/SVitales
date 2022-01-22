@@ -68,7 +68,7 @@ $result_citas = $mysqli-> query($sql_citas);
                 while($citas = mysqli_fetch_assoc($result_citas)){ ?>
                 <tr>
                     <td style="text-transform: capitalize;"><b><?php echo $citas['Nom_paciente']; ?></b></td>
-                    <form action="update_svitales.php" method="POST">
+                    <form action="update_svitales.php" method="POST" autocomplete="off">
                     <td>
                     <div class="row">
                     <div class="col s5">
