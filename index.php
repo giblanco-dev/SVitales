@@ -28,12 +28,35 @@ $result_citas = $mysqli-> query($sql_citas);
     <link rel="stylesheet" href="../ser/static/icons/iconfont/material-icons.css">
     <script src="../ser/static/js/materialize.js"></script>
     <script type="text/javascript" src="../ser/static/js/jquery-3.3.1.min.js"></script>
+    <style type="text/css"> 
+        thead tr th { 
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background-color: #ffffff;
+        }
+    
+        .table-responsive-2 { 
+            height: 450px; /* Mover a 400 para demostrar el scroll*/
+            overflow-y:scroll;
+        }
+    </style>
 </head>
 <body style="background-image: url('../ser/static/img/background_login.png'); background-size: cover;">
     <div class="container">
         <div class="row" style="margin-top: 1%;">
-        <div class="col s12 center-align">
+        <div class="col s1"></div>
+        <div class="col s8 center-align">
         <img src="../ser/static/img/banner_2.png" class="responsive-img z-depth-5">
+        </div>
+        <div class="col s3">
+            <div class="row" style="width: auto;">
+            <div class="input-field col s12 grey lighten-3 center-align">
+          <i class="material-icons prefix">search</i>
+          <input id="search" type="text">
+          <label for="search">Buscar pacientes</label>
+          </div>
+            </div>
         </div>
         </div>
     </div>
@@ -42,23 +65,26 @@ $result_citas = $mysqli-> query($sql_citas);
         
         <h4><b>Captura de Signos Vitales</b></h4>
         </div>
+        
+            
         <div class="col s4 grey lighten-3 center-align">
-        <a href="http://localhost/svitales/"><h4>Actualizar <i class="small material-icons">autorenew</i></h4></a>
+        <a href="index.php"><h4>Actualizar <i class="small material-icons">autorenew</i></h4></a>
         </div>
         </div>
         <div>
-        <div class="col s12 grey lighten-3 center-align">
-        <table>
+        <div class="col s12 grey lighten-3 center-align table-responsive-2">
+        <table id="mytable">
             <thead>
                 <tr>
                     <th>Paciente</th>
                     <th>T/A</th>
-                    <th>TEMP</th>
                     <th>FRE C</th>
                     <th>FRE R</th>
+                    <th>Oxígeno</th>
+                    <th>TEMP</th>
                     <th>Peso</th>
-                    <th>Talla</th>
                     <th>Edad</th>
+                    <th>Talla</th>
                     <th>Alergias</th>
                     <th></th>
                 </tr>
@@ -80,12 +106,14 @@ $result_citas = $mysqli-> query($sql_citas);
                     </div>
                     </div>
                     </td>
-                    <td><input style="font-size: 14px; width: 50px;" type="number" step="0.1" required name="temp" min="1"></td>
                     <td><input style="font-size: 14px; width: 50px;" type="number" step="0.1" required name="fc" min="1"></td>
                     <td><input style="font-size: 14px; width: 50px;" type="number" step="0.1" required name="fr" min="1"></td>
-                    <td><input style="font-size: 14px; width: 50px;" type="number" step="0.1" required name="peso" min="1"></td>
-                    <td><input style="font-size: 14px; width: 50px;" type="number" step="0.01" required name="talla" min="1"></td>
+                    <td><input style="font-size: 14px; width: 50px;" type="number"  required name="oxi" min="1"></td>
+                    <td><input style="font-size: 14px; width: 50px;" type="number" step="0.01" required name="temp" min="1"></td>
+                    <td><input style="font-size: 14px; width: 50px;" type="number"  required name="peso" min="1" step="0.1"></td>
                     <td><input style="font-size: 14px; width: 50px;" type="number" required name="edad" min="1"></td>
+                    <td><input style="font-size: 14px; width: 50px;" type="number" step="0.01" required name="talla" min="1"></td>
+                    
                     <td><input style="font-size: 14px;" type="text" required name="alergias"></td>
                     <td class="center-align"><button class="btn waves-effect waves-light" type="submit" name="action">Enviar
                     <input type="hidden" name="id_cita" value="<?php echo $citas['id_cita'];?>">
@@ -104,6 +132,20 @@ $result_citas = $mysqli-> query($sql_citas);
         <p style="margin-bottom: 18px;" >© Copyright 2022</p>
     </div>
         </div>
-   
+        <script>
+ // Write on keyup event of keyword input element
+ $(document).ready(function(){
+ $("#search").keyup(function(){
+ _this = this;
+ // Show only matching TR, hide rest of them
+ $.each($("#mytable tbody tr"), function() {
+ if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+ $(this).hide();
+ else
+ $(this).show();
+ });
+ });
+});
+</script>
 </body>
 </html>
