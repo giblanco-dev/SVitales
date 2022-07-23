@@ -43,12 +43,13 @@ $result_citas = $mysqli-> query($sql_citas);
     </style>
 </head>
 <body style="background-image: url('../ser/static/img/background_login.png'); background-size: cover;">
-    <div class="container">
-        <div class="row" style="margin-top: 1%;">
-        <div class="col s1"></div>
-        <div class="col s8 center-align">
-        <img src="../ser/static/img/banner_2.png" class="responsive-img z-depth-5">
+    <div>
+        <div class="row grey lighten-3">
+        
+        <div class="col s5 center-align">
+        <img src="../ser/static/img/banner_2.png" class="responsive-img">
         </div>
+        <div class="col s4"></div>
         <div class="col s3">
             <div class="row" style="width: auto;">
             <div class="input-field col s12 grey lighten-3 center-align">
@@ -81,7 +82,7 @@ $result_citas = $mysqli-> query($sql_citas);
                     <th>FRE C</th>
                     <th>FRE R</th>
                     <th>Oxígeno</th>
-                    <th>TEMP</th>
+                    <th>Temp</th>
                     <th>Peso</th>
                     <th>Edad</th>
                     <th>Talla</th>
