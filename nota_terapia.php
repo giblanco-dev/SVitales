@@ -19,7 +19,7 @@ LEFT OUTER JOIN enfermeras ON consulta.act_nota_enfermeria = enfermeras.clave
 LEFT OUTER JOIN user ON cita.medico = user.id
 LEFT OUTER JOIN rec_terapias ON cita.id_cita = rec_terapias.id_cita
 LEFT OUTER JOIN rec_sueros ON cita.id_cita = rec_sueros.id_cita
-WHERE cita.fecha = '$hoy' AND tipo = 0 AND pagado = 1";
+WHERE cita.fecha = '$hoy' AND tipo = 0 AND pagado = 1 GROUP BY cita.id_cita";
 
 $result_citas = $mysqli-> query($sql_citas_ter_sueros);
 

@@ -42,7 +42,7 @@ $sql_rec_sueros = "SELECT sueros.nom_suero, aplicado, aplicado_por,
 rec_sueros.cancelado, rec_sueros.id_registro, enfermeras.nom_enfermera
 FROM rec_sueros
 INNER JOIN sueros on rec_sueros.suero = sueros.id_suero
-INNER JOIN enfermeras on rec_sueros.aplicado_por = enfermeras.clave
+LEFT OUTER JOIN enfermeras on rec_sueros.aplicado_por = enfermeras.clave
 WHERE rec_sueros.id_cita = '$id_cita' and cancelado = 0";
 $result = $mysqli->query($sql_rec_sueros);
 $val_sueros = $result->num_rows;

@@ -30,7 +30,7 @@ require 'conn.php';
 <?php 
     $sql_total = "SELECT id_registro, terapia, indicaciones, no_terapias, aplicado, enfermeras.nom_enfermera, aplicado_por
                     FROM rec_terapias 
-                    INNER JOIN enfermeras on rec_terapias.aplicado_por = enfermeras.clave
+                    LEFT OUTER JOIN enfermeras on rec_terapias.aplicado_por = enfermeras.clave
                     WHERE id_cita = '$id_cita' and cancelado = 0";
     $res_tot_ter = $mysqli->query($sql_total);
     $tot_ter = $res_tot_ter-> num_rows;
