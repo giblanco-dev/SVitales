@@ -74,6 +74,39 @@ $result_complementos = $mysqli->query($sql_complementos);
         </div>
         
         <div class="row">
+        <div class="col s4">
+                <?php 
+                if($val_terapias > 0){
+                    ?>
+                <table>
+                    <thead>
+                        <tr class="center-align">
+                            <th colspan="2">Terapias aplicadas</th>
+                        </tr>
+                        <tr>
+                            <th>Terapia</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     <?php
+                     while($row_terapia = mysqli_fetch_assoc($result_terapias)){
+                        ?>
+                        <tr>
+                            <td><?php echo $row_terapia['nom_terapia']; ?></td>
+                            <td><?php echo $row_terapia['Total_aplicaciones']; ?></td>
+                        </tr>
+
+                    <?php    }
+                     ?>   
+                        
+                    </tbody>
+                </table>
+                <?php    }else{
+                    echo "<h6>No hay terapias aplicadas el día de hoy</h6>";
+                }
+                ?>
+            </div>
             <div class="col s4">
                 <?php 
                 if($val_sueros > 0){
@@ -108,39 +141,6 @@ $result_complementos = $mysqli->query($sql_complementos);
                 ?>
             </div>
 
-            <div class="col s4">
-                <?php 
-                if($val_terapias > 0){
-                    ?>
-                <table>
-                    <thead>
-                        <tr class="center-align">
-                            <th colspan="2">Terapias aplicadas</th>
-                        </tr>
-                        <tr>
-                            <th>Terapia</th>
-                            <th>Cantidad</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                     <?php
-                     while($row_terapia = mysqli_fetch_assoc($result_terapias)){
-                        ?>
-                        <tr>
-                            <td><?php echo $row_terapia['nom_terapia']; ?></td>
-                            <td><?php echo $row_terapia['Total_aplicaciones']; ?></td>
-                        </tr>
-
-                    <?php    }
-                     ?>   
-                        
-                    </tbody>
-                </table>
-                <?php    }else{
-                    echo "<h6>No hay terapias aplicadas el día de hoy</h6>";
-                }
-                ?>
-            </div>
 
             <div class="col s4">
                 <?php 

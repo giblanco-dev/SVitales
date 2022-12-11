@@ -28,16 +28,18 @@ $sql_hoja_enfermeria = "
     <link rel="shortcut icon" href="../ser/static/img/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container">
+        <div class="row justify-content-center">
             <div class="col">
-                <h6>Hoja de Enfermería del Paciente: <?php echo $nom_paciente ?> 
-                <span style="float: right;">Expediente Sistema: <?php echo $id_paciente; ?></span></h6>
+                <br>
+                <h5>Hoja de Enfermería del Paciente: <?php echo $nom_paciente ?> 
+                <span style="float: right;">Expediente Sistema: <?php echo $id_paciente; ?></span></h5>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <table class="table-bordered border-dark" style="font-size: 12px;">
+                <br>
+                <table class="table-bordered border-dark" style="font-size: 16px;">
                     <thead>
                         <tr>
                             <th>Fecha Cita</th>
@@ -59,17 +61,17 @@ $sql_hoja_enfermeria = "
                         $fecha_format = date("d-m-Y", strtotime($row['fecha']));
                         ?>
                         <tr>
-                            <td style="font-size: 12px;"><?php echo $fecha_format; ?></td>
-                            <td style="font-size: 12px;"><?php echo $row['ta']; ?></td>
-                            <td style="font-size: 12px;"><?php echo $row['fre_c']; ?></td>
-                            <td style="font-size: 12px;"><?php echo $row['fre_r']; ?></td>
-                            <td style="font-size: 12px;"><?php echo $row['oxi']; ?></td>
-                            <td style="font-size: 12px;"><?php echo $row['temp']; ?></td>
-                            <td style="font-size: 12px;"><?php echo $row['peso']; ?></td>
-                            <td style="font-size: 12px;"><?php echo $row['talla']; ?></td>
-                            <td style="font-size: 12px;"><?php echo $row['edad']; ?></td>
-                            <td style="font-size: 12px;"><?php echo $row['alergias']; ?></td>
-                            <td style="font-size: 12px;"><?php echo $row['nota_enfermeria']; ?></td>
+                            <td style="font-size: 16px;"><?php echo $fecha_format; ?></td>
+                            <td style="font-size: 16px;"><?php echo $row['ta']; ?></td>
+                            <td style="font-size: 16px;"><?php echo $row['fre_c']; ?></td>
+                            <td style="font-size: 16px;"><?php echo $row['fre_r']; ?></td>
+                            <td style="font-size: 16px;"><?php echo $row['oxi']; ?></td>
+                            <td style="font-size: 16px;"><?php echo $row['temp']; ?></td>
+                            <td style="font-size: 16px;"><?php echo $row['peso']; ?></td>
+                            <td style="font-size: 16px;"><?php echo $row['talla']; ?></td>
+                            <td style="font-size: 16px;"><?php echo $row['edad']; ?></td>
+                            <td style="font-size: 16px;"><?php echo $row['alergias']; ?></td>
+                            <td style="font-size: 16px;"><?php echo $row['nota_enfermeria']; ?></td>
                             
                         </tr>
 

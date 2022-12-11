@@ -11,6 +11,7 @@ COUNT(DISTINCT rec_sueros.id_registro) Total_Sueros,
 cita.id_paciente,
 consulta.nota_enfermeria,
 consulta.act_nota_enfermeria,
+consulta.turno,
 enfermeras.nom_enfermera
 FROM cita
 INNER JOIN paciente ON cita.id_paciente = paciente.id_paciente
@@ -35,8 +36,8 @@ $result_citas = $mysqli-> query($sql_citas_ter_sueros);
     <link rel="shortcut icon" href="../ser/static/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../ser/static/css/materialize.css">
     <link rel="stylesheet" href="../ser/static/icons/iconfont/material-icons.css">
-    <script src="../ser/static/js/materialize.js"></script>
     <script type="text/javascript" src="../ser/static/js/jquery-3.3.1.min.js"></script>
+    <script src="../ser/static/js/materialize.js"></script>
     <script>
         function abrir(url)
           { 
@@ -103,6 +104,7 @@ $result_citas = $mysqli-> query($sql_citas_ter_sueros);
                     <th>Notas Anteriores</th>
                     <th>Nota de Enfermería</th>
                     <th>Enfermera Captura</th>
+                    <th>Turno</th>
                     <th></th>
                 </tr>
             </thead>
@@ -116,10 +118,12 @@ $result_citas = $mysqli-> query($sql_citas_ter_sueros);
                     if($citas['nota_enfermeria'] != '' AND $citas['act_nota_enfermeria'] != ''){
                         $print_nota = $citas['nota_enfermeria'];
                         $prin_act_nota = $citas['nom_enfermera'];
+                        $turno = $citas['turno'];
                         $action = "";
                     }else{
                         $print_nota = '<input type="text" name="nota_enf" required>';
                         $prin_act_nota = '<input type="password" name="act_nota" required>';
+                        $turno =  2;    
                         $action = '<input type="submit" value="Enviar nota">';
                     }
 
@@ -139,18 +143,39 @@ $result_citas = $mysqli-> query($sql_citas_ter_sueros);
 
                     ?>
                 <tr>
+                    <form action="logic/act_nota_enf.php" method="POST">
                     <td><?php echo $nom_paciente;  ?></td>
                     <td><?php echo $citas['Medico']  ?></td>
                     <td><a href="javascript:abrir('ver_terapias.php?idc=<?php echo $id_cita; ?>&np=<?php echo $nom_paciente; ?>')"><?php echo $flag_terapias  ?></a></td>
                     <td><a href="javascript:abrir('ver_sueros.php?idc=<?php echo $id_cita; ?>&np=<?php echo $nom_paciente; ?>')"><?php echo $flag_sueros  ?></a></td>
                     <td><a href="hoja_enfermeria.php?idp=<?php echo $id_paciente?>&nom_paciente=<?php echo $nom_paciente ?>" target="_blank">Ver Hoja de Enfermería</a></td>
-                    <form action="logic/act_nota_enf.php" method="post">
+                    
                     <input type="hidden" name="id_cita" value="<?php echo $id_cita; ?>">
                     <td>
                         <?php echo $print_nota; ?>
                     </td>
                     <td>
                     <?php echo $prin_act_nota; ?>
+                    </td>
+                    <td>
+                    <?php if($turno == 2){ ?>
+                        <p style="font-size: 8px;">
+                            <label style="font-size: 8px;">
+                                <input type="radio" name="turno_env" value="Vespertino" />
+                                <span>Vespertino</span>
+                            </label>
+                            </p>
+                            <p style="font-size: 8px; margin-top: -10px;">
+                            <label style="font-size: 8px;">
+                                <input type="radio" name="turno_env" value="Matutino" />
+                                <span>Matutino</span>
+                            </label>
+                        </p>
+                        <?php 
+                        }else{
+                            echo $turno;
+                        }
+                        ?>
                     </td>
                     <td><?php echo $action; ?></td>
                     </form>
@@ -183,6 +208,11 @@ $result_citas = $mysqli-> query($sql_citas_ter_sueros);
  });
  });
 });
+</script>
+<script>
+    $(document).ready(function(){
+    $('select').formSelect();
+  });
 </script>
 </body>
 </html>
