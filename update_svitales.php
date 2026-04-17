@@ -25,9 +25,10 @@ if(!empty($_POST)){
     $talla = $_POST['talla'];
     $edad = $_POST['edad'];
     $alergias = $_POST['alergias'];
+    $periodo = $_POST['periodo'];
 
     $sql_svitales = "UPDATE consulta SET ta = '$t_a', temp = '$temp', fre_c = '$f_c', fre_r = '$f_r', oxi = '$oxi' ,peso = '$peso', talla = '$talla',
-                        edad = '$edad', alergias = '$alergias'  WHERE id_cita = '$id_cita'";
+                        edad = '$edad', periodo = '$periodo', alergias = '$alergias'  WHERE id_cita = '$id_cita'";
 
     if($mysqli->query($sql_svitales) === TRUE){
         echo '<script type="text/javascript">
@@ -43,7 +44,9 @@ if(!empty($_POST)){
     }else{
         echo '<script type="text/javascript" async="async">alert("Ha ocurrido un error, intente nuevamente \n , de lo contrario contacte con el administrador del sistema");window.location.href="index.php"</script>';
     }
+        
 }
+    
 ?>
 </body>
 </html>

@@ -26,8 +26,8 @@ $result_citas = $mysqli-> query($sql_citas);
     <link rel="shortcut icon" href="../ser/static/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../ser/static/css/materialize.css">
     <link rel="stylesheet" href="../ser/static/icons/iconfont/material-icons.css">
-    <script src="../ser/static/js/materialize.js"></script>
     <script type="text/javascript" src="../ser/static/js/jquery-3.3.1.min.js"></script>
+    <script src="../ser/static/js/materialize.js"></script>
     <style type="text/css"> 
         thead tr th { 
             position: sticky;
@@ -84,7 +84,7 @@ $result_citas = $mysqli-> query($sql_citas);
                     <th>Oxígeno</th>
                     <th>Temp</th>
                     <th>Peso</th>
-                    <th>Edad</th>
+                    <th colspan="2">Edad</th>
                     <th>Talla</th>
                     <th>Alergias</th>
                     <th></th>
@@ -113,6 +113,20 @@ $result_citas = $mysqli-> query($sql_citas);
                     <td><input style="font-size: 14px; width: 50px;" type="number" step="0.01" required name="temp" min="1"></td>
                     <td><input style="font-size: 14px; width: 50px;" type="number"  required name="peso" min="1" step="0.1"></td>
                     <td><input style="font-size: 14px; width: 50px;" type="number" required name="edad" min="1"></td>
+                    <td>
+                    <p>
+                        <label>
+                            <input name="periodo" type="radio" value="meses"/>
+                            <span>Meses</span>
+                        </label>
+                        </p>
+                    <p>
+                        <label>
+                            <input name="periodo" type="radio" value="años" />
+                            <span>Años</span>
+                        </label>
+                        </p>
+                    </td>
                     <td><input style="font-size: 14px; width: 50px;" type="number" step="0.01" required name="talla" min="1"></td>
                     
                     <td><input style="font-size: 14px;" type="text" required name="alergias"></td>

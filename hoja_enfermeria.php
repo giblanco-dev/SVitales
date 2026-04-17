@@ -6,7 +6,7 @@ $sql_hoja_enfermeria = "
                         SELECT cita.fecha, cita.id_cita, CONCAT(paciente.nombres,' ',paciente.a_paterno,' ',paciente.a_materno) Nom_Paciente, 
                         CONCAT(user.nombre,' ',user.apellido) Medico, 
                         cita.id_paciente, consulta.ta, consulta.temp, consulta.fre_c, consulta.fre_r, 
-                        consulta.oxi, consulta.peso, consulta.talla, consulta.edad, consulta.alergias, 
+                        consulta.oxi, consulta.peso, consulta.talla, consulta.edad, consulta.periodo, consulta.alergias, 
                         consulta.nota_enfermeria, consulta.act_nota_enfermeria 
                         FROM cita 
                         INNER JOIN paciente ON cita.id_paciente = paciente.id_paciente 
@@ -69,7 +69,7 @@ $sql_hoja_enfermeria = "
                             <td style="font-size: 16px;"><?php echo $row['temp']; ?></td>
                             <td style="font-size: 16px;"><?php echo $row['peso']; ?></td>
                             <td style="font-size: 16px;"><?php echo $row['talla']; ?></td>
-                            <td style="font-size: 16px;"><?php echo $row['edad']; ?></td>
+                            <td style="font-size: 16px;"><?php echo $row['edad'].' '.$row['periodo']; ?></td>
                             <td style="font-size: 16px;"><?php echo $row['alergias']; ?></td>
                             <td style="font-size: 16px;"><?php echo $row['nota_enfermeria']; ?></td>
                             

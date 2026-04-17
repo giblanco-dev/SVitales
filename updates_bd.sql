@@ -1,0 +1,2 @@
+ALTER TABLE `ser`.`consulta` 
+ADD COLUMN `periodo` VARCHAR(10) NULL DEFAULT NULL AFTER `edad`;
