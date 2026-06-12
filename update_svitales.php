@@ -1,3 +1,12 @@
+<?php 
+session_start();
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: index.php");
+    exit;
+}
+require_once 'conn.php';
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,13 +22,6 @@
 <body style="background-image: url('static/img/background_login.png'); background-size: cover;">
     
 <?php 
-session_start();
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
-    header("Location: index.php");
-    exit;
-}
-require_once 'conn.php';
-
 if(!empty($_POST)){
     $id_cita = $_POST['id_cita'];
     $t_a = $_POST['ta1'].'/'.$_POST['ta2'];
