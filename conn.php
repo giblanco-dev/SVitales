@@ -1,5 +1,5 @@
 <?php
-$ServerName = "medalternativaser.com";
+$ServerName = "localhost";
 $Username = "medalter_erp";
 $Password = "Sx5*MsY3JcLqA$6C";
 $NameBD = "medalter_serERP";

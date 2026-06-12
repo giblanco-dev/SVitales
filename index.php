@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-image: url('../ser/static/img/background_login.png'); 
+            background-image: url('static/img/background_login.png'); 
             background-size: cover;
             background-color: #f5f5f5;
         }

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Consulta</title>
-    <link rel="shortcut icon" href="../ser/static/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="../ser/static/css/materialize.css">
-    <script type="text/javascript" src="../ser/static/js/jquery-3.3.1.min.js"></script>
-    <script src="../ser/static/js/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="static/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="static/css/materialize.css">
+    <script type="text/javascript" src="static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/sweetalert.min.js"></script>
 </head>
-<body style="background-image: url('../ser/static/img/background_login.png'); background-size: cover;">
+<body style="background-image: url('static/img/background_login.png'); background-size: cover;">
     
 <?php 
 session_start();

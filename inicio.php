@@ -47,12 +47,12 @@ $result_citas = $mysqli-> query($sql_citas);
         }
     </style>
 </head>
-<body style="background-image: url('../ser/static/img/background_login.png'); background-size: cover;">
+<body style="background-image: url('static/img/background_login.png'); background-size: cover;">
     <div>
         <div class="row grey lighten-3">
         
         <div class="col s5 center-align">
-        <img src="../ser/static/img/banner_2.png" class="responsive-img">
+        <img src="static/img/banner_2.png" class="responsive-img">
         </div>
         <div class="col s4"></div>
         <div class="col s3">
