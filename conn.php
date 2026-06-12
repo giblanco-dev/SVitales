@@ -1,8 +1,8 @@
 <?php
-$ServerName = "localhost";
-$Username = "root";
-$Password = "xTNhJSP0)Ai}";
-$NameBD = "ser";
+$ServerName = "medalternativaser.com";
+$Username = "medalter_erp";
+$Password = "Sx5*MsY3JcLqA$6C";
+$NameBD = "medalter_serERP";
 $mysqli=new mysqli($ServerName, $Username, $Password, $NameBD); 
 	
 	if(mysqli_connect_errno()){

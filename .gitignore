@@ -1,2 +1,3 @@
 # Ignorar conexiones a BD
-conn.php
+# conn.php
+updates_bd.sql

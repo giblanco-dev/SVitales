@@ -12,6 +12,11 @@
 <body style="background-image: url('../ser/static/img/background_login.png'); background-size: cover;">
     
 <?php 
+session_start();
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header("Location: index.php");
+    exit;
+}
 require_once 'conn.php';
 
 if(!empty($_POST)){
@@ -38,7 +43,7 @@ if(!empty($_POST)){
             icon: "success",
             button: "Volver",
           }).then(function() {
-            window.location = "index.php";
+            window.location = "inicio.php";
         });
         </script>';
     }else{
